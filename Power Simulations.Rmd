@@ -60,7 +60,7 @@ print(n_final)
 possible.ns <- seq(from=80000, to=180000, by=10000) # The sample sizes we'll be considering (selected around final sample size of 153,425 women calculated above)
 powers <- rep(NA, length(possible.ns))              # Empty object to collect simulation estimates
 alpha <- 0.05                                       # Standard significance level
-sims <- 10                                          # Number of simulations to conduct for each N
+sims <- 500                                         # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # Diabetes, 5Y FUP, HR 0.75, rate of event in control 18.3 per 1000 person-year (Lipscombe 2013)
@@ -92,7 +92,7 @@ pow_1
 possible.ns <- seq(from=80000, to=180000, by=10000) # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))              # Empty object to collect simulation estimates
 alpha <- 0.05                                       # Standard significance level
-sims <- 10                                          # Number of simulations to conduct for each N
+sims <- 500                                         # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # Diabetes, 5Y FUP, HR 0.80, rate of event in control 18.3 per 1000 py (Lipscombe 2013)
@@ -124,7 +124,7 @@ pow_2
 possible.ns <- seq(from=80000, to=180000, by=10000) # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))              # Empty object to collect simulation estimates
 alpha <- 0.05                                       # Standard significance level
-sims <- 10                                          # Number of simulations to conduct for each N
+sims <- 500                                         # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # Diabetes, 5Y FUP, HR 0.85, rate of event in control 18.3 per 1000 py (Lipscombe 2013)
@@ -156,7 +156,7 @@ pow_3
 possible.ns <- seq(from=80000, to=180000, by=10000)   # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))                # Empty object to collect simulation estimates
 alpha <- 0.05                                         # Standard significance level
-sims <- 10                                            # Number of simulations to conduct for each N
+sims <- 500                                           # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # Diabetes, 5Y FUP, HR 0.90, rate of event in control 18.3 per 1000 py (Lipscombe 2013)
@@ -188,7 +188,7 @@ pow_4
 possible.ns <- seq(from=80000, to=180000, by=10000)     # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))                  # Empty object to collect simulation estimates
 alpha <- 0.05                                           # Standard significance level
-sims <- 10                                              # Number of simulations to conduct for each N
+sims <- 500                                             # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # Diabetes, 5Y FUP, HR 0.93, rate of event in control 18.3 per 1000 py (Lipscombe 2013)
@@ -220,7 +220,7 @@ pow_5
 possible.ns <- seq(from=80000, to=180000, by=10000)     # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))                  # Empty object to collect simulation estimates
 alpha <- 0.05                                           # Standard significance level
-sims <- 10                                              # Number of simulations to conduct for each N
+sims <- 500                                             # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # Diabetes, 5Y FUP, HR 0.95, rate of event in control 18.3 per 1000 py (Lipscombe 2013)
@@ -330,7 +330,7 @@ print(n_final)
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering (selected around final sample size of 20,983 women calculated above)
 powers <- rep(NA, length(possible.ns))           # Empty object to collect simulation estimates
 alpha <- 0.05                                    # Standard significance level
-sims <- 10                                       # Number of simulations to conduct for each N
+sims <- 500                                      # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # MACE, 5Y FUP, HR 0.75, rate of event in control 60 per 1000 person-year (Angoulvant et al, 2021)
@@ -362,7 +362,7 @@ MACE1
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))            # Empty object to collect simulation estimates
 alpha <- 0.05                                     # Standard significance level
-sims <- 10                                        # Number of simulations to conduct for each N
+sims <- 500                                       # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # MACE, 5Y FUP, HR 0.80, rate of event in control 60 per 1000 py (Angoulvant et al, 2021)
@@ -394,7 +394,7 @@ MACE2
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))            # Empty object to collect simulation estimates
 alpha <- 0.05                                     # Standard significance level
-sims <- 10                                        # Number of simulations to conduct for each N
+sims <- 500                                       # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # MACE, 5Y FUP, HR 0.85, rate of event in control 60 per 1000 py (Angoulvant et al, 2021)
@@ -426,7 +426,7 @@ MACE3
 possible.ns <- seq(from=15000, to=25000, by=1000)  # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))             # Empty object to collect simulation estimates
 alpha <- 0.05                                      # Standard significance level
-sims <- 10                                         # Number of simulations to conduct for each N
+sims <- 500                                        # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # MACE, 5Y FUP, HR 0.90, rate of event in control 90 per 1000 py (Angoulvant et al, 2021)
@@ -458,7 +458,7 @@ MACE4
 possible.ns <- seq(from=15000, to=25000, by=1000)  # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))             # Empty object to collect simulation estimates
 alpha <- 0.05                                      # Standard significance level
-sims <- 10                                         # Number of simulations to conduct for each N
+sims <- 500                                        # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # MACE, 5Y FUP, HR 0.93, rate of event in control 60 per 1000 person-years (Angoulvant et al, 2021)
@@ -491,7 +491,7 @@ MACE5
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering
 powers <- rep(NA, length(possible.ns))            # Empty object to collect simulation estimates
 alpha <- 0.05                                     # Standard significance level
-sims <- 10                                        # Number of simulations to conduct for each N
+sims <- 500                                       # Number of simulations to conduct for each N
 
 # Write function to run simulation on
 # MACE, 5Y FUP, HR 0.95, rate of event in control 60 per 1000 py (Angoulvant et al, 2021)
