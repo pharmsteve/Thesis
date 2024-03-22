@@ -54,7 +54,7 @@ print(n_final)
 
 # **Objective 1: Diabetes risk**
 
-## *Simulation for HR 0.75*
+## *Simulation for HR 1.25*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=80000, to=180000, by=10000) # The sample sizes we'll be considering (selected around final sample size of 153,425 women calculated above)
@@ -70,7 +70,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.75                                    # Hypothesize treatment effect
+    tau <- 0.80                                    # Hypothesize treatment effect (inverse of 1.25)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -82,11 +82,11 @@ for (j in 1:length(possible.ns)){
 }
 pow_1 <- data.frame(possible.ns, powers)
 pow_1$fup <- as.factor(c(2))
-pow_1$effect <- as.factor(c(0.75))
+pow_1$effect <- as.factor(c(1.25))
 pow_1
 ```
 
-## *Simulation for HR 0.80*
+## *Simulation for HR 1.20*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=80000, to=180000, by=10000) # The sample sizes we'll be considering
@@ -102,7 +102,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.80                                    # Hypothesize treatment effect
+    tau <- 0.833                                  # Hypothesize treatment effect (inverse of 1.20)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -114,11 +114,11 @@ for (j in 1:length(possible.ns)){
 }
 pow_2 <- data.frame(possible.ns, powers)
 pow_2$fup <- as.factor(c(2))
-pow_2$effect <- as.factor(c(0.80))
+pow_2$effect <- as.factor(c(1.20))
 pow_2
 ```
 
-## *Simulation for HR 0.85*
+## *Simulation for HR 1.15*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=80000, to=180000, by=10000) # The sample sizes we'll be considering
@@ -134,7 +134,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.85                                    # Hypothesize treatment effect
+    tau <- 0.87                                    # Hypothesize treatment effect (inverse of 1.15)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -146,11 +146,11 @@ for (j in 1:length(possible.ns)){
 }
 pow_3 <- data.frame(possible.ns, powers)
 pow_3$fup <- as.factor(c(2))
-pow_3$effect <- as.factor(c(0.85))
+pow_3$effect <- as.factor(c(1.15))
 pow_3
 ```
 
-## *Simulation for HR 0.90*
+## *Simulation for HR 1.10*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=80000, to=180000, by=10000)   # The sample sizes we'll be considering
@@ -166,8 +166,8 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)           # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.9                                       # Hypothesize treatment effect
-    Y1 <- Y0*tau                                     # treatment potential outcome
+    tau <- 0.909                                     # Hypothesize treatment effect (inverse of 1.10)
+    Y1 <- Y0*tau                                     # treatment potential outcome 
     Z.sim <- rbinom(n=N, size=1, prob=.5)            # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)                 # Reveal outcomes according to assignment
     fit.sim <- lm(Y.sim ~ Z.sim)                     # Do analysis (Simple regression)
@@ -178,11 +178,11 @@ for (j in 1:length(possible.ns)){
 }
 pow_4 <- data.frame(possible.ns, powers)
 pow_4$fup <- as.factor(c(2))
-pow_4$effect <- as.factor(c(0.90))
+pow_4$effect <- as.factor(c(1.10))
 pow_4
 ```
 
-## *Simulation for HR 0.93*
+## *Simulation for HR 1.08*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=80000, to=180000, by=10000)     # The sample sizes we'll be considering
@@ -198,7 +198,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.93                                    # Hypothesize treatment effect
+    tau <- 0.926                                   # Hypothesize treatment effect (inverse of 1.08)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -210,11 +210,11 @@ for (j in 1:length(possible.ns)){
 }
 pow_5 <- data.frame(possible.ns, powers)
 pow_5$fup <- as.factor(c(2))
-pow_5$effect <- as.factor(c(0.93))
+pow_5$effect <- as.factor(c(1.08))
 pow_5
 ```
 
-## *Simulation for HR 0.95*
+## *Simulation for HR 1.05*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=80000, to=180000, by=10000)     # The sample sizes we'll be considering
@@ -230,7 +230,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.95                                    # Hypothesize treatment effect
+    tau <- 0.952                                   # Hypothesize treatment effect (inverse of 1.05)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -242,7 +242,7 @@ for (j in 1:length(possible.ns)){
 }
 pow_6 <- data.frame(possible.ns, powers)
 pow_6$fup <- as.factor(c(2))
-pow_6$effect <- as.factor(c(0.95))
+pow_6$effect <- as.factor(c(1.05))
 pow_6
 ```
 
@@ -267,18 +267,18 @@ pow_4n<-
 ```{r}
 # Plot power curves
 ggplot() + 
-  geom_line(data = pow_1, aes(x = possible.ns, y = powers, color = "HR=0.75"), linewidth=1)+
-  geom_smooth(data = pow_2n, aes(x = possible.ns, y = power_n, color = "HR=0.80"), 
+  geom_line(data = pow_1, aes(x = possible.ns, y = powers, color = "a) HR=1.25"), linewidth=1)+
+  geom_smooth(data = pow_2n, aes(x = possible.ns, y = power_n, color = "b) HR=1.20"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = pow_3n, aes(x = possible.ns, y = power_n, color = "HR=0.85"), 
+  geom_smooth(data = pow_3n, aes(x = possible.ns, y = power_n, color = "c) HR=1.15"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = pow_4n, aes(x = possible.ns, y = power_n, color = "HR=0.90"), 
+  geom_smooth(data = pow_4n, aes(x = possible.ns, y = power_n, color = "d) HR=1.10"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = pow_5, aes(x = possible.ns, y = powers, color = "HR=0.93"), 
+  geom_smooth(data = pow_5, aes(x = possible.ns, y = powers, color = "e) HR=1.08"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = pow_6, aes(x = possible.ns, y = powers, color = "HR=0.95"), 
+  geom_smooth(data = pow_6, aes(x = possible.ns, y = powers, color = "f)  HR=1.05"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  labs(x = "Study Sample Size", y = "Power", title = "Power for Objective 1 (5-year follow-up)") + 
+  labs(x = "Study Sample Size", y = "Power", title = "Power for Objective II (5-year follow-up)") + 
   theme_classic() +  
   theme(plot.title = element_text(hjust = 0.5),  
         panel.grid = element_blank()) +
@@ -287,8 +287,7 @@ ggplot() +
   geom_hline(yintercept = 0.8, linetype = "dashed", color = "black") +
   geom_vline(xintercept = 153425, linetype = "dashed", color = "black") +
   scale_color_manual(name = "Effect Size", 
-                     values = c("HR=0.75" = "blue", "HR=0.80" = "purple", "HR=0.85" = "green", "HR=0.90" = "brown", "HR=0.93" = "darkgreen" , "HR=0.95" = "darkgrey"),
-                     labels = c("HR=0.75", "HR=0.80", "HR=0.85", "HR=0.90", "HR=0.93", "HR=0.95"))
+                     values = c("a) HR=1.25" = "blue", "b) HR=1.20" = "purple", "c) HR=1.15" = "green", "d) HR=1.10" = "brown", "e) HR=1.08" = "darkgreen" , "f)  HR=1.05" = "darkgrey"))
 
 ggsave("fig1.jpg", units="in", width=10, height=7, dpi=300)
 ```
@@ -324,7 +323,7 @@ print(n_final)
 ```
 
 
-## *Simulation for HR 0.75*
+## *Simulation for HR 1.25*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering (selected around final sample size of 20,983 women calculated above)
@@ -340,7 +339,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.75                                    # Hypothesize treatment effect
+    tau <- 0.80                                    # Hypothesize treatment effect (inverse of 1.25)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -352,11 +351,11 @@ for (j in 1:length(possible.ns)){
 }
 MACE1 <- data.frame(possible.ns, powers)
 MACE1$fup <- as.factor(c(2))
-MACE1$effect <- as.factor(c(0.75))
+MACE1$effect <- as.factor(c(1.25))
 MACE1
 ```
 
-## *Simulation for HR 0.80*
+## *Simulation for HR 1.20*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering
@@ -372,7 +371,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.80                                    # Hypothesize treatment effect
+    tau <- 0.833                                    # Hypothesize treatment effect (inverse of 1.20)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -384,11 +383,11 @@ for (j in 1:length(possible.ns)){
 }
 MACE2 <- data.frame(possible.ns, powers)
 MACE2$fup <- as.factor(c(2))
-MACE2$effect <- as.factor(c(0.80))
+MACE2$effect <- as.factor(c(1.20))
 MACE2
 ```
 
-## *Simulation for HR 0.85*
+## *Simulation for HR 1.15*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering
@@ -404,7 +403,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.85                                    # Hypothesize treatment effect
+    tau <- 0.87                                    # Hypothesize treatment effect (inverse of 1.15)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -416,11 +415,11 @@ for (j in 1:length(possible.ns)){
 }
 MACE3 <- data.frame(possible.ns, powers)
 MACE3$fup <- as.factor(c(2))
-MACE3$effect <- as.factor(c(0.85))
+MACE3$effect <- as.factor(c(1.15))
 MACE3
 ```
 
-## *Simulation for HR 0.90*
+## *Simulation for HR 1.10*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=15000, to=25000, by=1000)  # The sample sizes we'll be considering
@@ -436,8 +435,8 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.90                                    # Hypothesize treatment effect
-    Y1 <- Y0*tau                                   # treatment potential outcome
+    tau <- 0.909                                   # Hypothesize treatment effect
+    Y1 <- Y0*tau                                   # treatment potential outcome (inverse of 1.10)
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
     fit.sim <- lm(Y.sim ~ Z.sim)                   # Do analysis (Simple regression)
@@ -448,11 +447,11 @@ for (j in 1:length(possible.ns)){
 }
 MACE4 <- data.frame(possible.ns, powers)
 MACE4$fup <- as.factor(c(3))
-MACE4$effect <- as.factor(c(0.90))
+MACE4$effect <- as.factor(c(1.10))
 MACE4
 ```
 
-## *Simulation for HR 0.93*
+## *Simulation for HR 1.08*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=15000, to=25000, by=1000)  # The sample sizes we'll be considering
@@ -468,7 +467,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.93                                    # Hypothesize treatment effect
+    tau <- 0.926                                   # Hypothesize treatment effect (inverse of 1.08)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -480,12 +479,12 @@ for (j in 1:length(possible.ns)){
 }
 MACE5 <- data.frame(possible.ns, powers)
 MACE5$fup <- as.factor(c(3))
-MACE5$effect <- as.factor(c(0.93))
+MACE5$effect <- as.factor(c(1.08))
 MACE5
 ```
 
 
-## *Simulation for HR 0.95*
+## *Simulation for HR 1.05*
 ```{r}
 # Simulation 
 possible.ns <- seq(from=15000, to=25000, by=1000) # The sample sizes we'll be considering
@@ -501,7 +500,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.95                                    # Hypothesize treatment effect
+    tau <- 0.952                                   # Hypothesize treatment effect (inverse of 1.05)
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -513,7 +512,7 @@ for (j in 1:length(possible.ns)){
 }
 MACE6 <- data.frame(possible.ns, powers)
 MACE6$fup <- as.factor(c(2))
-MACE6$effect <- as.factor(c(0.95))
+MACE6$effect <- as.factor(c(1.05))
 MACE6
 ```
 
@@ -539,18 +538,18 @@ MACE4n<-
 ```{r}
 # Plot power curves
 ggplot() + 
-  geom_line(data = MACE1, aes(x = possible.ns, y = powers, color = "HR=0.75"), linewidth = 1) +
-  geom_smooth(data = MACE2n, aes(x = possible.ns, y = power_n, color = "HR=0.80"), 
+  geom_line(data = MACE1, aes(x = possible.ns, y = powers, color = "a) HR=1.25"), linewidth = 1) +
+  geom_smooth(data = MACE2n, aes(x = possible.ns, y = power_n, color = "b) HR=1.20"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = MACE3n, aes(x = possible.ns, y = power_n, color = "HR=0.85"), 
+  geom_smooth(data = MACE3n, aes(x = possible.ns, y = power_n, color = "c) HR=1.15"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = MACE4n, aes(x = possible.ns, y = power_n, color = "HR=0.90"), 
+  geom_smooth(data = MACE4, aes(x = possible.ns, y = powers, color = "d) HR=1.10"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = MACE5, aes(x = possible.ns, y = powers, color = "HR=0.93"), 
+  geom_smooth(data = MACE5, aes(x = possible.ns, y = powers, color = "e) HR=1.08"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  geom_smooth(data = MACE6, aes(x = possible.ns, y = powers, color = "HR=0.95"), 
+  geom_smooth(data = MACE6, aes(x = possible.ns, y = powers, color = "f) HR=1.05"), 
               se = FALSE, method = "gam", formula = y ~ s(log(x), k = 4)) +
-  labs(x = "Study Sample Size", y = "Power", title = "Power for Objective 2 (5-year follow-up)") + 
+  labs(x = "Study Sample Size", y = "Power", title = "Power for Objective III (5-year follow-up)") + 
   theme_classic() +  
   theme(plot.title = element_text(hjust = 0.5),  
         panel.grid = element_blank()) +
@@ -559,8 +558,7 @@ ggplot() +
   geom_hline(yintercept = 0.8, linetype = "dashed", color = "black") +
   geom_vline(xintercept = 20983, linetype = "dashed", color = "black") +
   scale_color_manual(name = "Effect Size", 
-                     values = c("HR=0.75" = "blue", "HR=0.80" = "purple", "HR=0.85" = "green", "HR=0.90" = "brown", "HR=0.93" = "darkgreen" , "HR=0.95" = "darkgrey"),
-                     labels = c("HR=0.75", "HR=0.80", "HR=0.85", "HR=0.90", "HR=0.93", "HR=0.95"))
+                     values = c("a) HR=1.25" = "blue", "b) HR=1.20" = "purple", "c) HR=1.15" = "green", "d) HR=1.10" = "brown", "e) HR=1.08" = "darkgreen" , "f) HR=1.05" = "darkgrey"))
 
 ggsave("fig2.jpg", units="in", width=10, height=7, dpi=300)
 ```
