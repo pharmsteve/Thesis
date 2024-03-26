@@ -70,7 +70,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.80                                    # Hypothesize treatment effect (inverse of 1.25)
+    tau <- 1.25                                    # Hypothesized treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -102,7 +102,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.833                                  # Hypothesize treatment effect (inverse of 1.20)
+    tau <- 1.20                                  # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -134,7 +134,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.87                                    # Hypothesize treatment effect (inverse of 1.15)
+    tau <- 1.15                                    # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -166,7 +166,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)           # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.909                                     # Hypothesize treatment effect (inverse of 1.10)
+    tau <- 1.10                                      # Hypothesize treatment effect
     Y1 <- Y0*tau                                     # treatment potential outcome 
     Z.sim <- rbinom(n=N, size=1, prob=.5)            # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)                 # Reveal outcomes according to assignment
@@ -198,7 +198,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.926                                   # Hypothesize treatment effect (inverse of 1.08)
+    tau <- 1.08                                   # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -230,7 +230,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.0183*4)                 # control potential outcome rate * mean years of follow-up (minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.952                                   # Hypothesize treatment effect (inverse of 1.05)
+    tau <- 1.05                                    # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -339,7 +339,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.80                                    # Hypothesize treatment effect (inverse of 1.25)
+    tau <- 1.25                                    # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -371,7 +371,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.833                                    # Hypothesize treatment effect (inverse of 1.20)
+    tau <- 1.20                                    # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -403,7 +403,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.87                                    # Hypothesize treatment effect (inverse of 1.15)
+    tau <- 1.15                                    # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -435,8 +435,8 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.909                                   # Hypothesize treatment effect
-    Y1 <- Y0*tau                                   # treatment potential outcome (inverse of 1.10)
+    tau <- 1.10                                   # Hypothesize treatment effect
+    Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
     fit.sim <- lm(Y.sim ~ Z.sim)                   # Do analysis (Simple regression)
@@ -467,7 +467,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.926                                   # Hypothesize treatment effect (inverse of 1.08)
+    tau <- 1.08                                   # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
@@ -500,7 +500,7 @@ for (j in 1:length(possible.ns)){
   significant.experiments <- rep(NA, sims)         # Empty object to count significant experiments
   for (i in 1:sims){
     Y0 <- rbinom(n=N, 1, 0.06*4)                   # control potential outcome rate * mean years of follow-up (5 minus 1 year to conservatively account for depletion of susceptible individuals over time.)
-    tau <- 0.952                                   # Hypothesize treatment effect (inverse of 1.05)
+    tau <- 1.05                                    # Hypothesize treatment effect
     Y1 <- Y0*tau                                   # treatment potential outcome
     Z.sim <- rbinom(n=N, size=1, prob=.5)          # Do a random assignment
     Y.sim <- Y1*Z.sim + Y0*(1-Z.sim)               # Reveal outcomes according to assignment
